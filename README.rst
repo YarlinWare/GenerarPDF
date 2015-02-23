@@ -1,0 +1,1 @@
+Generar pdf en django usando reportlab

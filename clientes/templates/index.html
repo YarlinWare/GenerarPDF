@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block titulo %} Listado de Clientes {% endblock %}
+{% block contenido %}
+
+    <h1> Clientes </h1>
+
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Edad</th>
+            <th>Direccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for foo in c %}
+            <tr class="active">
+                <td> {{ foo.id }}</td>
+                <td> {{ foo.nombre }}</td>
+                <td> {{ foo.email }}</td>
+                <td> {{ foo.edad }}</td>
+                <td> {{ foo.direccion }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    <a href="{% url 'pdf' %}">
+        <input type="button" class="btn-primary" value="Imprimir"/>
+    </a>
+
+
+
+{% endblock %}
