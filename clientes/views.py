@@ -32,10 +32,10 @@ def generar_pdf(request):
                             topMargin=60,
                             bottomMargin=18,
                             )
-    catalog = []
+    clientes = []
     styles = getSampleStyleSheet()
     header = Paragraph("Listado de Clientes", styles['Heading1'])
-    catalog.append(header)
+    clientes.append(header)
     headings = ('Nombre', 'Email', 'Edad', 'Dirección')
     allclientes = [(p.nombre, p.email, p.edad, p.direccion) for p in Clientes.objects.all()]
     print allclientes
@@ -48,8 +48,8 @@ def generar_pdf(request):
             ('BACKGROUND', (0, 0), (-1, 0), colors.dodgerblue)
         ]
     ))
-    catalog.append(t)
-    doc.build(catalog)
+    clientes.append(t)
+    doc.build(clientes)
     response.write(buff.getvalue())
     buff.close()
     return response
