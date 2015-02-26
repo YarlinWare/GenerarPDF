@@ -21,8 +21,8 @@ class IndexView(ListView):
 def generar_pdf(request):
     print "Genero el PDF"
     response = HttpResponse(content_type='application/pdf')
-    pdf_name = "clientes.pdf"
-    # la linea 31 es por si deseas descargar el pdf
+    pdf_name = "clientes.pdf"  # llamado clientes
+    # la linea 26 es por si deseas descargar el pdf a tu computadora
     # response['Content-Disposition'] = 'attachment; filename=%s' % pdf_name
     buff = BytesIO()
     doc = SimpleDocTemplate(buff,
